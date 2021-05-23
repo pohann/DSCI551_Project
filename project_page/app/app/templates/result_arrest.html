@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colrolib Templates">
+    <meta name="author" content="colorlib.com">
+    <meta name="keywords" content="Colrolib Templates">
+
+    <!-- Title Page-->
+    <title>Crime and Arrest in the City of Los Angeles</title>
+
+    <!-- Icons font CSS-->
+    <link href="{{ url_for('static', filename='css/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='css/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ url_for('static', filename='css/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='css/vendor/datepicker/daterangepicker.css') }}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+      
+
+
+</head>
+
+<body>  
+    
+
+
+    <div class="container">
+        <!--Dropdown menu-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{url_for('summary') }}">Summary</a>
+                <a class="dropdown-item" href="#">Arrest</a>
+                <a class="dropdown-item" href="{{url_for('crime') }}">Crime</a>
+            </div>
+        </div>
+
+        <!--Developed by Feibai Pan-->
+        <h2>Arrest</h2>
+        <!--table-->                                                                                   
+        <div class="table-responsive">         
+            <table class="table table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                    <th>report id</th> <!--arrest-->
+                    <th>area_id</th><!--area-->
+                    <th>reporting_district</th><!--arrest-->
+                    <th>area_name</th> <!--area-->
+                    <th>bureau</th><!--area-->
+                    <th>address</th><!--address-->
+                    <th>corss_street</th><!--address-->
+                    <th>coordinates</th><!--address-->
+                    <th>arrest_date</th><!--arrest-->
+                    <th>time</th><!--arrest-->
+                    <th>type</th><!--arrest-->
+                    <th>age</th><!--criminal-->
+                    <th>sex</th><!--criminal-->
+                    <th>descent</th><!--criminal-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            {% for r in mysql_d %}
+                        <tr>
+                            {% for i in r %}
+                            <td>{{i}}</td>
+                            {% endfor %}
+                        </tr>
+                            {% endfor %}
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+
+    <a href="{{ url_for('arrest_prev') }}">
+        <button class="btn-submit" type="submit">Previous page</button>
+    </a>  
+    
+    <a href="{{ url_for('arrest_next') }}">
+        <button class="btn-submit" type="submit">Next page</button>
+    </a>  
+    <a href="{{ url_for('index') }}">
+        <button class="btn-submit" type="submit">Back to search</button>
+    </a>    
+
+ <!-- Jquery JS-->
+ <script src="{{ url_for('static', filename='js/vendor/jquery/jquery.min.js') }}"></script>
+ <!-- Vendor JS-->
+ <script src="{{ url_for('static', filename='js/vendor/select2/select2.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/jquery-validate/jquery.validate.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/bootstrap-wizard/bootstrap.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/datepicker/moment.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/datepicker/daterangepicker.js') }}"></script>
+
+ <!-- Main JS-->
+ <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

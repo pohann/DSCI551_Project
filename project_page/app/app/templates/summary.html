@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colrolib Templates">
+    <meta name="author" content="colorlib.com">
+    <meta name="keywords" content="Colrolib Templates">
+
+    <!-- Title Page-->
+    <title>Crime and Arrest in the City of Los Angeles</title>
+
+    <!-- Icons font CSS-->
+    <link href="{{ url_for('static', filename='css/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='css/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ url_for('static', filename='css/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='css/vendor/datepicker/daterangepicker.css') }}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="all">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+      
+
+
+</head>
+
+<body>  
+    
+
+
+    <div class="container">
+        <!--Dropdown menu-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Summary</a>
+            <a class="dropdown-item" href="{{url_for('arrest') }}">Arrest</a>
+            <a class="dropdown-item" href="{{url_for('crime') }}">Crime</a>
+            </div>
+        </div>
+
+        <!--Developed by Feibai Pan-->
+        <h4><br>Please notice that the area should be two digit string number from 01 to 21.</h4>
+        <h4>Both data sets include records from 2010 to 2019. </h4>
+        <h4>Please try any time period during these years if no record is shown. <br></h4>
+        <h2>Summary</h2>
+        <p style="font-size:150%;">Overall arrest rate (#arrest/#crime): <b>{{overall_arrest_rate}}</b> 
+        <p style="font-size:150%;">Most dangerous district: <b>{{dangerous_district}}</b> 
+
+        <h2>Arrest</h2>
+        <p style="font-size:150%;">Male to female ratio: <b>{{sex_ratio}}</b>,  
+        Most comman age of criminal: <b>{{age}}</b>, Average age: <b>{{avg_age}}</b></p>  
+        <p style="font-size:150%;">District with most arrest: <b>{{arrest_district}}</b>, Most common crime type: <b>{{type_}}</b></p>  
+        
+        <h2>Crime</h2>
+        <p style="font-size:150%;">Male to female ratio: <b>{{vict_sex_ratio}}</b>,  
+        Most comman age of victim: <b>{{vict_age}}</b>, Average age: <b>{{avg_vict_age}}</b></p>  
+        <p style="font-size:150%;">District with most crime: <b>{{criminal_district}}</b> </p>
+
+  
+    <a href="{{ url_for('index') }}">
+        <button class="btn-submit" type="submit">Back to search</button>
+    </a>    
+
+ <!-- Jquery JS-->
+ <script src="{{ url_for('static', filename='js/vendor/jquery/jquery.min.js') }}"></script>
+ <!-- Vendor JS-->
+ <script src="{{ url_for('static', filename='js/vendor/select2/select2.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/jquery-validate/jquery.validate.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/bootstrap-wizard/bootstrap.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/datepicker/moment.min.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/vendor/datepicker/daterangepicker.js') }}"></script>
+
+ <!-- Main JS-->
+ <script src="{{ url_for('static', filename='js/global.js') }}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
